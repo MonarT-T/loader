@@ -5,27 +5,19 @@
 
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
+	<link rel="stylesheet" type="text/css" href="t.css">
 
 	<script>
-	var a;
+		function waitLoad() {
+		    setTimeout(showPage, 3250);
+		}
 
-	function myFunction() {
-	    a = setTimeout(showPage, 3250);
-	}
-
-	function showPage() {
-	  document.getElementById("preloader").style.display = "none";
-	  document.getElementById("postloader").style.display = "block";
-	}
-
-	$.wait = function(ms) {
-    	var defer = $.Deferred();
-    	setTimeout(function() { defer.resolve(); }, ms);
-    	return defer;
-	};
-</script>
+		function showPage() {
+		  document.getElementById("preloader").style.display = "none";
+		  document.getElementById("postloader").style.display = "block";
+		}
+	</script>
 	
-
 	<script>
 	$(document).ready(function(){
 		setTimeout(
@@ -46,10 +38,8 @@
 			}, 2350);
 	});	
 	</script>
-
-	<link rel="stylesheet" type="text/css" href="t.css">
 </head>
-<body onload="myFunction()">
+<body onload="waitLoad()">
 
 	<div id="preloader"></div>
 
@@ -60,11 +50,3 @@
 
 </body>
 </html>
-
-
-<!--
-	border-top: #b22701;
-	border-bottom:#e43201;
-	border-right:#fe744d;
-	border-left:#fe4e1b;
--->
