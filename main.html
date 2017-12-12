@@ -4,24 +4,40 @@
 	<meta charset="utf-8">
 	<script>
 	$(document).ready(function(){
-		$(".loader1").css("border-bottom", "solid #e43201");
+		$("#preloader").css();
 	});	
 	</script>
 	<link rel="stylesheet" type="text/css" href="t.css">
 </head>
-<body>
+<body onload="myFunction()">
+
 	<div id="preloader"></div>
-	<div style="display:none;" id="postloader">
-		<h1>test</h1>
+
+	<div id="postloader" class="animate-bottom">
+		<h1>VMS</h1>
+		<h2>Vacation Management System</h2>
 	</div>
+
+<script>
+var a;
+
+function myFunction() {
+    a = setTimeout(showPage, 3000);
+}
+
+function showPage() {
+  document.getElementById("preloader").style.display = "none";
+  document.getElementById("postloader").style.display = "block";
+}
+</script>
 	
 </body>
 </html>
 
 
 <!--
-	border-top: 16px solid #b22701;
-	border-bottom: 16px solid #e43201;
-	border-right: 16px solid #fe744d;
-	border-left: 16px solid #fe4e1b;
+	border-top: #b22701;
+	border-bottom:#e43201;
+	border-right:#fe744d;
+	border-left:#fe4e1b;
 -->

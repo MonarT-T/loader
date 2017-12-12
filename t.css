@@ -20,3 +20,22 @@
 	0% {transform: rotate(0deg);}
 	100% {transform: rotate(360deg);}
 }
+
+.animate-bottom {
+  position: relative;
+  -webkit-animation-name: animatebottom;
+  -webkit-animation-duration: 1s;
+  animation-name: animatebottom;
+  animation-duration: 1s
+}
+
+
+@keyframes animatebottom { 
+  from{ bottom:-100px; opacity:0 } 
+  to{ bottom:0; opacity:1 }
+}
+
+#postloader {
+  display: none;
+  text-align: center;
+}
