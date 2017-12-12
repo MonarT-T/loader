@@ -2,11 +2,47 @@
 <html>
 <head>
 	<meta charset="utf-8">
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+
+	<script>
+	var a;
+
+	function myFunction() {
+	    a = setTimeout(showPage, 3000);
+	}
+
+	function showPage() {
+	  document.getElementById("preloader").style.display = "none";
+	  document.getElementById("postloader").style.display = "block";
+	}
+
+	$.wait = function(ms) {
+    	var defer = $.Deferred();
+    	setTimeout(function() { defer.resolve(); }, ms);
+    	return defer;
+	};
+</script>
+	
+
 	<script>
 	$(document).ready(function(){
-		$("#preloader").css();
+		setTimeout(
+			function(){
+				$("#preloader").css("transition", "border-bottom 0.5s").css("border-bottom", "16px solid #e43201");
+			}, 750);
+		setTimeout(
+			function(){
+				$("#preloader").css("transition", "border-right 0.5s").css("border-right", "16px solid #fe744d");
+			}, 1500);
+		setTimeout(
+			function(){
+				$("#preloader").css("transition", "border-left 0.5s").css("border-left", "16px solid #fe4e1b");
+			}, 2250);
 	});	
 	</script>
+
 	<link rel="stylesheet" type="text/css" href="t.css">
 </head>
 <body onload="myFunction()">
@@ -18,19 +54,6 @@
 		<h2>Vacation Management System</h2>
 	</div>
 
-<script>
-var a;
-
-function myFunction() {
-    a = setTimeout(showPage, 3000);
-}
-
-function showPage() {
-  document.getElementById("preloader").style.display = "none";
-  document.getElementById("postloader").style.display = "block";
-}
-</script>
-	
 </body>
 </html>
 
